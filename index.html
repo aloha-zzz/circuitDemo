@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: 100%">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -17,7 +17,7 @@
     <script src="src/js/bootstrap.min.js"></script>
     <script src="src/js/clearmin.min.js"></script>
 </head>
-<body class="cm-no-transition cm-2-navbar">
+<body class="cm-no-transition cm-2-navbar" >
 <div id="cm-menu" class="" style="z-index: 10001">
     <nav class="cm-navbar cm-navbar-primary">
         <div class="cm-flex">
@@ -83,15 +83,22 @@
 </header>
 
 
-<div id="global">
+<div id="content" style="margin-left: 50px;height: 100%">
 
-    <div id="main" style="height: 500px;width: 80%;margin-left: 50px"></div>
+    <div id="main" style="height: 100%;width: 70%;"></div>
 
-    <footer class="cm-footer" hidden>
+    <footer class="cm-footer" hidden style="display: none">
         <span class="pull-right">&copy; SDU IRLab</span>
     </footer>
 
 </div>
+
+</body>
+<script>
+    var barH = document.getElementById('cm-header').offsetHeight;
+    document.getElementById('content').style.marginTop=barH+'px';
+    document.body.style.height=window.innerHeight -barH+'px';
+</script>
 <!--<script src="src/js/echartsmap/BMap.js"></script>-->
 <script src="src/js/echartsmap/bmapkey.js"></script>
 <script src="src/js/echartsmap/echarts.js"></script>
@@ -99,8 +106,6 @@
 <script src="src/js/myjs/mapdata.js"></script>
 <script src="src/js/myjs/map-demo.js"></script>
 <script src="src/js/myjs/index.js"></script>
-</body>
-
 
 
 </html>

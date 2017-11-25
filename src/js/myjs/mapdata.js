@@ -235,5 +235,3 @@ var mapdata=[
 
 ];
 
-
-var truedata=[];
