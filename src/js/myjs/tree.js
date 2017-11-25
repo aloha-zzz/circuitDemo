@@ -1,36 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="utf-8">
-    <title>ECharts</title>
-</head>
-<body>
-<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-<div id="main" style="height:600px;width: 800px"></div>
+function createTree() {
 
-<!-- ECharts单文件引入 -->
-
-<script src="src/js/echartsmap/echarts3.0/echarts.js"></script>
-
-<script type="text/javascript">
-    // 基于准备好的dom，初始化echarts图表
-    var myChart = echarts.init(document.getElementById("main"));
+    var myChart = echarts.init(document.getElementById("tree"));
     myChart.showLoading();
     var data1 = {
-        "name": "1",
+        "name": "flare",
         "children": [
             {
-                "name": "2",
+                "name": "data",
                 "children": [
                     {
-                        "name": "3",
+                        "name": "converters",
                         "children": [
-                            {"name": "4", "value": 721},
-                            {"name": "4", "value": 4294}
+                            {"name": "Converters", "value": 721},
+                            {"name": "DelimitedTextConverter", "value": 4294}
                         ]
                     },
                     {
-                        "name": "3",
+                        "name": "DataUtil",
                         "value": 3322
                     }
                 ]
@@ -268,14 +254,9 @@
     };
 
 
-    // 为echarts对象加载数据
+// 为echarts对象加载数据
     myChart.setOption(option);
     myChart.on('click',function (param) {
-        console.log(param)
+        treeClick(param);
     })
-
-
-
-</script>
-</body>
-</html>
+}

@@ -9,7 +9,7 @@
  * is map option series
  * */
 
-createMap(mapdata);
+// createMap(mapdata);
 
 
 function createMap(data) {

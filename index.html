@@ -40,6 +40,7 @@
                     </div>
 
 
+
                     <div class="form-group">
 
                         <div class="col-xs-8 col-xs-offset-3">
@@ -49,13 +50,53 @@
                     </div>
 
                     <br>
+                    <div class="form-group">
+                        <input id="newSearch" type="button"
+                               class="col-xs-offset-6 col-xs-4 btn btn-default" value="开始新任务">
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="routeName" class="col-xs-4 control-label pull-left">PMS库变电站</label>
+                        <div class="col-xs-7">
+                            <input type="text" class="form-control"
+                                   readonly="readonly"    placeholder="">
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="routeName" class="col-xs-4 control-label pull-left">PMS库变压器</label>
+                        <div class="col-xs-7">
+                            <input type="text" class="form-control"
+                                   readonly="readonly"   placeholder="">
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="routeName" class="col-xs-4 control-label pull-left">营销库变电站</label>
+                        <div class="col-xs-7">
+                            <input type="text" class="form-control"
+                                   readonly="readonly"   placeholder="">
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="routeName" class="col-xs-4 control-label pull-left">营销库变压器</label>
+                        <div class="col-xs-7">
+                            <input type="text" class="form-control"
+                                   readonly="readonly"   placeholder="">
+
+                        </div>
+                    </div>
 
 
                     <div class="form-group">
-                        <input id="newSearch" type="button"
-                               class="col-xs-offset-2 col-xs-4 btn btn-default" value="开始新任务">
+
                         <input  type="button"
-                                class="col-xs-offset-1 col-xs-4 btn btn-primary" id="secondSearch" value="当前任务搜索">
+                                class="col-xs-offset-6 col-xs-4 btn btn-primary" id="compare" value="对比分析">
                     </div>
 
                 </form>
@@ -73,6 +114,9 @@
                 <input type="search" name="q" autocomplete="off" placeholder="Search...">
             </form>
         </div>
+
+
+
         <div class="pull-right">
             <div id="cm-search-btn" class="btn btn-primary md-search-white" data-toggle="cm-search"></div>
         </div>
@@ -84,14 +128,18 @@
 
 
 <div id="content" style="margin-left: 50px;height: 100%">
+    <div id="main2" style="height:  100%;width: 30%;float: right"></div>
+    <div id="main" style="height: 100%;width:70%;float: right"></div>
 
-    <div id="main" style="height: 100%;width: 70%;"></div>
-
+    <div id="tree" style="height: 100%;width:80%;float: right"></div>
     <footer class="cm-footer" hidden style="display: none">
         <span class="pull-right">&copy; SDU IRLab</span>
     </footer>
 
 </div>
+
+
+
 
 </body>
 <script>
@@ -99,6 +147,9 @@
     document.getElementById('content').style.marginTop=barH+'px';
     document.body.style.height=window.innerHeight -barH+'px';
 </script>
+<script src="src/js/echartsmap/echarts3.0/echarts.js"></script>
+<script src="src/js/myjs/tree.js"></script>
+<script src="src/js/myjs/main2.js"></script>
 <!--<script src="src/js/echartsmap/BMap.js"></script>-->
 <script src="src/js/echartsmap/bmapkey.js"></script>
 <script src="src/js/echartsmap/echarts.js"></script>
@@ -106,6 +157,6 @@
 <script src="src/js/myjs/mapdata.js"></script>
 <script src="src/js/myjs/map-demo.js"></script>
 <script src="src/js/myjs/index.js"></script>
-
+<script src="src/js/myjs/handleClick.js"></script>
 
 </html>

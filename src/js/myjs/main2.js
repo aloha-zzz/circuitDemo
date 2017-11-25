@@ -1,20 +1,5 @@
-<!DOCTYPE html>
-<html style="height: 100%;width:100%">
-<head lang="en">
-    <meta charset="utf-8">
-    <title>ECharts</title>
-</head>
-<body style="height: 100%;width:100%;overflow: hidden">
-<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-<div id="main" style="height: 100%;width:30%"></div>
-
-
-
-<script src="src/js/echartsmap/echarts3.0/echarts.js"></script>
-
-<script type="text/javascript">
-    // 基于准备好的dom，初始化echarts图表
-    var myChart = echarts.init(document.getElementById("main"));
+function createMapchart() {
+    var myChart = echarts.init(document.getElementById("main2"));
     var option = {
         title : {
             text: '各民族常用动物药',
@@ -87,12 +72,6 @@
     };
 
 
-    // 为echarts对象加载数据
+// 为echarts对象加载数据
     myChart.setOption(option);
-
-
-
-
-</script>
-</body>
-</html>
+}

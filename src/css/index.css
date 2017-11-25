@@ -2,3 +2,12 @@
     margin: 0;
     padding: 0;
 }
+#main{
+    display:none;
+}
+#main2{
+    display: none;
+}
+#tree{
+    display: none;
+}
