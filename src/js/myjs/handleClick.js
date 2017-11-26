@@ -38,16 +38,18 @@ document.getElementById('compare').onclick=function () {
     document.getElementById('main2').style.display='block';
     createMap(mapdata);
     createMapchart();
+    
+
 }
 function treeClick(param) {
     var input=document.querySelectorAll('input.form-control');
     console.log(param);
     if(param.seriesName=='PMS'){
-        console.log(111);
+
         input[2].value=param.data.name;
     }
     if(param.seriesName=="营销库"){
-        console.log(222);
+
         input[4].value=param.data.name;
     }
 }
