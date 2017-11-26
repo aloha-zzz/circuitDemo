@@ -42,8 +42,11 @@ function addradioChartData(name,nodes) {
                     }
                 }
             });
-            var t = arr3[arr3.length-1].trim().split(' ').length;
-            temp.push({value:t, name:'共同的配电站'})
+            if(arr3[arr3.length-1]!=''){
+                var t = arr3[arr3.length-1].trim().split(' ').length;
+                temp.push({value:t, name:'共同的配电站'})
+            }
+
             return temp;
         })()
 
