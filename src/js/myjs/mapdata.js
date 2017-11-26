@@ -42,7 +42,7 @@ function addMapData(name,nodes) {
                         width: 3,
                         shadowBlur: 10
                     },
-                    label:{show:false,value:'天河城'}
+                    label:{show:false,value:''}
                 }
             },
 

@@ -50,7 +50,7 @@ function createMapchart(sdata) {
     var option = {
         title : {
             text: 'PMS和营销数据库',
-            subtext: '区别图',
+            subtext: '配电站区别图',
             x:'center'
         },
         tooltip : {
