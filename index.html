@@ -32,9 +32,9 @@
 
                 <form id="leftSearch" class="form-horizontal">
                     <div class="form-group">
-                        <label for="routeName" class="col-xs-3 control-label pull-left">路线名称</label>
+                        <label for="routeName" class="col-xs-3 control-label pull-left">查询内容</label>
                         <div class="col-xs-8">
-                            <input type="text" class="form-control" id="routeName"
+                            <input type="text" value="青阳变电站" class="form-control" id="routeName"
                                    placeholder="">
                         </div>
                     </div>
@@ -131,7 +131,7 @@
     <div id="main2" style="height:  100%;width: 30%;float: right"></div>
     <div id="main" style="height: 100%;width:70%;float: right"></div>
 
-    <div id="tree" style="height: 100%;width:80%;float: right"></div>
+    <div id="tree" style="height: 100%;width:75%;float: right"></div>
     <footer class="cm-footer" hidden style="display: none">
         <span class="pull-right">&copy; SDU IRLab</span>
     </footer>
@@ -145,8 +145,12 @@
 <script>
     var barH = document.getElementById('cm-header').offsetHeight;
     document.getElementById('content').style.marginTop=barH+'px';
-    document.body.style.height=window.innerHeight -barH+'px';
+    document.body.style.height=window.innerHeight-barH+'px';
+
+
 </script>
+
+
 <script src="src/js/echartsmap/echarts3.0/echarts.js"></script>
 <script src="src/js/myjs/tree.js"></script>
 <script src="src/js/myjs/main2.js"></script>

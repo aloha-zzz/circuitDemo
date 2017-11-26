@@ -1,3 +1,6 @@
+
+var inputValue1;
+var inputValue2;
 document.getElementById('newSearch').onclick=function () {
     // var clickBox=document.querySelectorAll('.clickBox');
     // var pms=clickBox[0].checked;
@@ -22,8 +25,10 @@ document.getElementById('newSearch').onclick=function () {
     document.getElementById('tree').style.display='block';
     createTree();
     var input=document.querySelectorAll('input.form-control');
-    input[1].value='变电站1';
-    input[3].value='变电站1';
+    input[1].value=inputValue1;
+    input[2].value='';
+    input[3].value=inputValue2;
+    input[4].value='';
 }
 
 document.getElementById('compare').onclick=function () {
@@ -40,7 +45,6 @@ function treeClick(param) {
     if(param.seriesName=='PMS'){
         console.log(111);
         input[2].value=param.data.name;
-
     }
     if(param.seriesName=="营销库"){
         console.log(222);
