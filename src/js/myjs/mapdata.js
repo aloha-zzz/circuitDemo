@@ -102,9 +102,9 @@ function addMapData(name,nodes) {
                             })()
                         },value:(function () {
                             if(item.type=='变电站'){
-                                return 30
-                            }else if(item.type=='线路'){
                                 return 20
+                            }else if(item.type=='线路'){
+                                return 15
                             }else{
                                 return 10
                             }
