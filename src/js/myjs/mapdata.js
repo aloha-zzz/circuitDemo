@@ -4,7 +4,7 @@
 
 
 
-var color=['#facbc9','gold','#13d89d','#48aef5','#facbc9','#facbc9','#facbc9','#facbc9'];
+var color=['#e49c37','#13d89d','#facbc9','gold','#90c7af','#bda299','#66b8dc','#e07ea0'];
 
 
 var mapdata=[];
@@ -42,7 +42,7 @@ function addMapData(name,nodes) {
                         width: 3,
                         shadowBlur: 10
                     },
-                    label:{show:false,value:'天河城'}
+                    label:{show:false,value:''}
                 }
             },
 
@@ -62,9 +62,9 @@ function addMapData(name,nodes) {
         markPoint:{
             // symbol:'image://./image/location.svg',
             // symbol:'emptyCircle',
-            // symbolSize:function(v){
-            //     return v/5
-            // },
+            symbolSize:function(v){
+                return v/2
+            },
             effect:{
                 show:true,
                 type:'bounce',
@@ -100,7 +100,15 @@ function addMapData(name,nodes) {
                                 }
                                 return tempTip
                             })()
-                        }})
+                        },value:(function () {
+                            if(item.type=='变电站'){
+                                return 30
+                            }else if(item.type=='线路'){
+                                return 20
+                            }else{
+                                return 10
+                            }
+                        })()})
                     });
                     // console.log(temp)
                     return temp;
