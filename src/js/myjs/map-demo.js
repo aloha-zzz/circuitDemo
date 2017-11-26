@@ -48,12 +48,13 @@ function createMap(data) {
             var container = BMapExt.getEchartsContainer();
 
             var startPoint = {
-                x: 113.328755, //天河城
-                y: 23.135588
+                x: 116.594283,
+                    y: 36.891089
             };
 
+
             var point = new BMap.Point(startPoint.x, startPoint.y);
-            map.centerAndZoom(point, 17);
+            map.centerAndZoom(point, 10);
             map.enableScrollWheelZoom(true);
             // 地图自定义样式
             map.setMapStyle({
@@ -230,11 +231,11 @@ function createMap(data) {
                         fontWeight:'bold',
                     }
                 },
-                //鼠标移动上面的展示
+                // 鼠标移动上面的展示
                 tooltip : {
                     show: true,
                     trigger:'item',
-                    hideDelay:4000,
+                    hideDelay:1000,
                     formatter: function(d) {
                         var jw= '经度：'+d.value[0]+'<br/>'
                         jw += '纬度：'+d.value[1]
@@ -244,7 +245,14 @@ function createMap(data) {
                 //文字的颜色
                 color:color,
                 legend:{
-                    data:['上班轨迹(甲)','逛街购物轨迹(乙,丙)'],
+                    data:(function () {
+                        var temp =[];
+                        data.map(function (item) {
+                            temp.push(item.name);
+                        })
+                        // console.log(temp);
+                        return temp;
+                    })(),
                     x:'left',
                     orient:'vertical',
                     padding:[30,15,15,30],
@@ -252,10 +260,15 @@ function createMap(data) {
                         fontSize:17,
                         color:'auto',
                     },
-                    selected:{
-                        '上班轨迹(甲)':true,
-                        '逛街购物轨迹(乙,丙)':false,
+                    selected:function () {
+                        var temp={};
+                        data.map(function (item) {
+                            temp[item.name]=true
+                        });
+                        return temp;
                     },
+
+
                     selectedMode:'multiple',
                 },
                 /*
