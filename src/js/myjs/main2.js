@@ -53,6 +53,7 @@ function addradioChartData(name,nodes) {
 
 
 function createMapchart(sdata) {
+    console.log(sdata);
     var myChart = echarts.init(document.getElementById("main2"));
     var option = {
         title : {
@@ -72,7 +73,6 @@ function createMapchart(sdata) {
                 var temp=[];
                 sdata.map(function (item) {
                     item.data.map(function (ite) {
-
                         var have =false;
                         // for(var i=0;i<temp.length;i++){
                         //     if(temp[i]==ite.name){
