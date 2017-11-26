@@ -24,6 +24,7 @@ var radioChartData =[
 ];
 
 function addradioChartData(name,nodes) {
+
     radioChartData.push({
         name:name,
         type:'pie',
@@ -34,9 +35,15 @@ function addradioChartData(name,nodes) {
             var temp = [];
             nodes.map(function (item) {
                 if(item.EQUIP_NAME!=undefined){
-                    temp.push({value:1, name:item.EQUIP_NAME})
+                    if(arr3.indexOf(item.EQUIP_NAME)<0){
+
+                    }else{
+                        temp.push({value:1, name:item.EQUIP_NAME})
+                    }
                 }
             });
+            var t = arr3[arr3.length-1].trim().split(' ').length;
+            temp.push({value:t, name:'共同的配电站'})
             return temp;
         })()
 
@@ -67,17 +74,18 @@ function createMapchart(sdata) {
                     item.data.map(function (ite) {
 
                         var have =false;
-                        for(var i=0;i<temp.length;i++){
-                            if(temp[i]==ite.name){
-                                have=true;
-                                break;
-                            }
-                        }
+                        // for(var i=0;i<temp.length;i++){
+                        //     if(temp[i]==ite.name){
+                        //         have=true;
+                        //         break;
+                        //     }
+                        // }
                         if(have==false){
                             temp.push(ite.name);
                         }
                     })
                 });
+                // console.log(temp)
                 return temp;
             })()
 
@@ -104,3 +112,25 @@ function createMapchart(sdata) {
     myChart.setOption(option);
 }
 
+function diffArr(arr1, arr2) {
+    var diff = [];
+    var tmp = arr2;
+
+    arr1.forEach(function(val1, i){
+        if (arr2.indexOf(val1) < 0) {
+            diff.push(val1);
+        } else {
+            tmp.splice(tmp.indexOf(val1), 1);
+        }
+    });
+    diff =diff.concat(tmp);
+    var others ='';
+    for(var i=0;i<arr1.length;i++){
+        if(diff.indexOf(arr1[i])<0){
+            others+=arr1[i]+''
+        }
+    }
+    diff.push(others);
+    console.log(others);
+    return diff;
+};

@@ -4,7 +4,7 @@
 
 
 
-var color=['#e49c37','#13d89d','#facbc9','gold','#90c7af','#bda299','#66b8dc','#e07ea0'];
+var color=['rgba(110, 199, 36, 0.52)','rgba(216, 60, 60, 0.52)','#facbc9','gold','#90c7af','#bda299','#66b8dc','#e07ea0'];
 
 
 var mapdata=[];
@@ -183,10 +183,27 @@ function addMapData(name,nodes) {
     //
     // ]
 
-
+var arr1=[];
+var arr2=[];
+var arr3=[];
 function initMapChart() {
     mapdata=[];
     radioChartData=[];
+    arr1=[];
+    arr2=[];
+    arr3=[];
+    useData[0].nodes.map(function (item) {
+        if(item.EQUIP_NAME!=undefined){
+            arr1.push(item.EQUIP_NAME)
+        }
+    })
+    useData[1].nodes.map(function (item) {
+        if(item.EQUIP_NAME!=undefined){
+            arr2.push(item.EQUIP_NAME)
+        }
+    })
+    arr3 = diffArr(arr1,arr2)
+
     useData.map(function (item) {
         addMapData(item.source,item.nodes);
         addradioChartData(item.source,item.nodes);
