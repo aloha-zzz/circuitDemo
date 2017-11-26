@@ -2,7 +2,7 @@
 
 //false 代表三层 true 代表二层
 function processData(input1,input2,input3,input4,bool1,bool2) {
-    console.log(arguments);
+
     var PMS=[];
     var Sale=[];
     useData=[];
@@ -15,8 +15,7 @@ function processData(input1,input2,input3,input4,bool1,bool2) {
         }
     })
 
-    console.log(PMS);
-    console.log(Sale);
+
     var obj={PMS:[],Sale:[]};
     if(bool1){
         PMS.map(function (item) {
