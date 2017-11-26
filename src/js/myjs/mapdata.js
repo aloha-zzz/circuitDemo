@@ -198,6 +198,7 @@ function initMapChart() {
         }
     })
     useData[1].nodes.map(function (item) {
+        console.log(item)
         if(item.EQUIP_NAME!=undefined){
             arr2.push(item.EQUIP_NAME)
         }

@@ -130,7 +130,7 @@ function diffArr(arr1, arr2) {
     var others ='';
     for(var i=0;i<arr1.length;i++){
         if(diff.indexOf(arr1[i])<0){
-            others+=arr1[i]+''
+            others+=arr1[i]+' '
         }
     }
     diff.push(others);
