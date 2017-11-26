@@ -157,22 +157,34 @@ function addMapData(name,nodes) {
     })
 }
 
-    [
-    {"source":"营销",
-        "nodes":[{"id":"100778414","type":"变电站","lng":"117.263449","lat":"36.394801", "SUBS_NO":"06M00000100778414","SUBS_NAME":"110kV北泉变电站"},
-            {"id":"SBID000000923E567098A94D1000076","type":"线路","lng":"116.556233","lat":"36.221089","LINE_NO":"06M00000015437052","LINE_NAME":" 线路10076"},
-            {"id":"100844774","type":"配电站","lng":"116.594283","lat":"36.891089","EQUIP_NO":"06M00000015437052","EQUIP_NAME":" 配电站478#"}
-        ]
-    },
-    {"source":"PMS",
-        "nodes":[{"id":"100778414","type":"变电站","lng":"117.263449","lat":"36.394801", "SUBS_NO":"06M00000100778414","SUBS_NAME":"110kV北泉变电站"},
-            {"id":"SBID000000923E567098A94D1000076","type":"线路","lng":"116.444283","lat":"36.771089","LINE_NO":"06M00000015437052","LINE_NAME":" 线路10076"},
-            {"id":"100844774","type":"配电站","lng":"116.594283","lat":"36.891089","LINE_NO":"06M00000015437052","EQUIP_NAME":" 配电站478#"},
-            {"id":"100844779","type":"配电站","lng":"116.506336","lat":"36.687165","EQUIP_NO":"06M00000100844781","EQUIP_NAME":" 配电站488#"},
-            {"id":"100844781","type":"配电站","lng":"116.674256","lat":"36.616244","EQUIP_NO":"06M00000100844779","EQUIP_NAME":" 配电站486#"}
-        ]
-    }
+    // [
+    // {"source":"营销",
+    //     "nodes":[{"id":"100778414","type":"变电站","lng":"117.263449","lat":"36.394801", "SUBS_NO":"06M00000100778414","SUBS_NAME":"110kV北泉变电站"},
+    //         {"id":"SBID000000923E567098A94D1000076","type":"线路","lng":"116.556233","lat":"36.221089","LINE_NO":"06M00000015437052","LINE_NAME":" 线路10076"},
+    //         {"id":"100844774","type":"配电站","lng":"116.594283","lat":"36.891089","EQUIP_NO":"06M00000015437052","EQUIP_NAME":" 配电站478#"}
+    //     ]
+    // },
+    // {"source":"PMS",
+    //     "nodes":[{"id":"100778414","type":"变电站","lng":"117.263449","lat":"36.394801", "SUBS_NO":"06M00000100778414","SUBS_NAME":"110kV北泉变电站"},
+    //         {"id":"SBID000000923E567098A94D1000076","type":"线路","lng":"116.444283","lat":"36.771089","LINE_NO":"06M00000015437052","LINE_NAME":" 线路10076"},
+    //         {"id":"100844774","type":"配电站","lng":"116.594283","lat":"36.891089","LINE_NO":"06M00000015437052","EQUIP_NAME":" 配电站478#"},
+    //         {"id":"100844779","type":"配电站","lng":"116.506336","lat":"36.687165","EQUIP_NO":"06M00000100844781","EQUIP_NAME":" 配电站488#"},
+    //         {"id":"100844781","type":"配电站","lng":"116.674256","lat":"36.616244","EQUIP_NO":"06M00000100844779","EQUIP_NAME":" 配电站486#"}
+    //     ]
+    // }
+    //
+    // ]
 
-    ].map(function (item) {
-    addMapData(item.source,item.nodes);
-})
+
+function initMapChart() {
+    mapdata=[];
+    radioChartData=[];
+    useData.map(function (item) {
+        addMapData(item.source,item.nodes);
+        addradioChartData(item.source,item.nodes);
+
+    });
+    createMap(mapdata);
+    createMapchart(radioChartData);
+
+}

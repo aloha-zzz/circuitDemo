@@ -623,4 +623,6 @@ var mockData={
                     "EQUIP_NAME": " 配电站31#"
                 }]
         }]
-}
+};
+
+var useData=[];

@@ -5,6 +5,7 @@ function processData(input1,input2,input3,input4,bool1,bool2) {
     console.log(arguments);
     var PMS=[];
     var Sale=[];
+    useData=[];
     mockData.mapdata.map(function (item) {
         if(item.source=='PMS'){
             PMS.push(item);
@@ -59,6 +60,9 @@ function processData(input1,input2,input3,input4,bool1,bool2) {
         })
     }
     console.log(obj);
+    useData.push({"source":"PMS","nodes":obj.PMS});
+    useData.push({"source":"营销库","nodes":obj.Sale});
+
 
 
 }

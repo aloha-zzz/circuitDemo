@@ -42,8 +42,7 @@ document.getElementById('compare').onclick=function () {
         document.getElementById('tree').style.display='none';
         document.getElementById('main').style.display='block';
         document.getElementById('main2').style.display='block';
-        createMap(mapdata);
-        createMapchart();
+        initMapChart();
     }
 
 
