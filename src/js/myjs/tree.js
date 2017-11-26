@@ -133,11 +133,11 @@ function createTree() {
             orient: 'vertical',
             data: [{
                 name: 'PMS',
-                icon: 'rectangle'
+                icon: 'rectangle',textStyle:{color:'#00588b'}
             } ,
                 {
                     name: '营销库',
-                    icon: 'rectangle'
+                    icon: 'rectangle',textStyle:{color:'#EB1C24'}
                 }],
             borderColor: '#c23531'
         },
@@ -163,7 +163,11 @@ function createTree() {
                         align: 'right'
                     }
                 },
-
+                lineStyle: {
+                    normal: {
+                        color:'#00588b'
+                    }
+                },
                 leaves: {
                     label: {
                         normal: {
@@ -199,7 +203,11 @@ function createTree() {
                         align: 'right'
                     }
                 },
-
+                lineStyle: {
+                    normal: {
+                        color:'#EB1C24'
+                    }
+                },
                 leaves: {
                     label: {
                         normal: {

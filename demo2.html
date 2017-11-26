@@ -176,20 +176,24 @@
             trigger: 'item',
             triggerOn: 'mousemove'
         },
+
         legend: {
             top: '2%',
             left: '3%',
             orient: 'vertical',
+
             data: [{
                 name: 'PMS',
-                icon: 'rectangle'
-            } ,
+                icon: 'rectangle',textStyle:{color:'#00588b'}
+            },
                 {
                     name: '营销库',
-                    icon: 'rectangle'
-                }],
-            borderColor: '#c23531'
+                    icon: 'rectangle',textStyle:{color:'#EB1C24 '}
+                },],
+
+
         },
+
         series:[
             {
                 type: 'tree',
@@ -212,7 +216,11 @@
                         align: 'right'
                     }
                 },
-
+                lineStyle: {
+                    normal: {
+                       color:'#00588b'
+                    }
+                },
                 leaves: {
                     label: {
                         normal: {
@@ -248,7 +256,11 @@
                         align: 'right'
                     }
                 },
-
+                lineStyle: {
+                    normal: {
+                        color:'#EB1C24'
+                    }
+                },
                 leaves: {
                     label: {
                         normal: {
