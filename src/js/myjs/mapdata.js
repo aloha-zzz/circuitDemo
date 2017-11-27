@@ -4,7 +4,7 @@
 
 
 
-var color=['rgba(110, 199, 36, 0.52)','rgba(216, 60, 60, 0.52)','#facbc9','gold','#90c7af','#bda299','#66b8dc','#e07ea0'];
+var color=['rgba(251, 255, 0, 0.7)','rgba(255, 0, 235, 0.5)','#facbc9','gold','#90c7af','#bda299','#66b8dc','#e07ea0'];
 
 
 var mapdata=[];

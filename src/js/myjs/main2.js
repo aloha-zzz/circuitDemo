@@ -44,7 +44,14 @@ function addradioChartData(name,nodes) {
             });
             if(arr3[arr3.length-1]!=''){
                 var t = arr3[arr3.length-1].trim().split(' ').length;
-                temp.push({value:t, name:'共同的配电站'})
+                temp.push({value:t, name:'共同的配电站',tooltip : {
+                    trigger: 'item',
+                    formatter: function () {
+                        var a =arr3[arr3.length-1].trim().split('  ');
+                        return  a.join('<br/>');
+                    }
+                    // "{a} <br/>{b} : {c} ({d}%)"
+                },})
             }
 
             return temp;
