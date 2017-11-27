@@ -72,6 +72,9 @@ function createMapchart(sdata) {
             x:'center'
         },
         tooltip : {
+            textStyle:{
+                fontSize:9,
+            },
             trigger: 'item',
             formatter: "{a} <br/>{b}"
                 // "{a} <br/>{b} : {c} ({d}%)"
